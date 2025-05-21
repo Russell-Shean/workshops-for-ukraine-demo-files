@@ -1,0 +1,185 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"penguins\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "penguins",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "species",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fc87d866-b9ab-4d8c-a49c-cab24fc9561d",
+            "sourceColumn": "species",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "island",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7077cf71-61e7-4e30-ba88-961b906031b8",
+            "sourceColumn": "island",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "bill_len",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "370dfdfb-4f22-4e3c-8249-437d7b38916c",
+            "sourceColumn": "bill_len",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "bill_dep",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4a2b6950-51cd-4ca6-9e82-13dbb4f27d08",
+            "sourceColumn": "bill_dep",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "flipper_len",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b9647af7-5fc3-4820-b9cc-dbe2acc13127",
+            "sourceColumn": "flipper_len",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "body_mass",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "096c486b-6073-44a8-a779-2602e3819953",
+            "sourceColumn": "body_mass",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "sex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "617fd211-662d-4b0b-8a54-8d8a28f60429",
+            "sourceColumn": "sex",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "381f391b-f97b-41bb-bfb3-b8ed977128de",
+            "sourceColumn": "year",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "8bc1cb48-c4a7-4fc2-97d3-abaacaa57967",
+        "partitions": [
+          {
+            "name": "penguins",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\rshea\\coding_projects\\dashboard_tests\\workshop files\\data\\penguins.csv\"),[Delimiter=\",\", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"species\", type text}, {\"island\", type text}, {\"bill_len\", type text}, {\"bill_dep\", type text}, {\"flipper_len\", type text}, {\"body_mass\", type text}, {\"sex\", type text}, {\"year\", Int64.Type}}),",
+                "    #\"Uppercased Text\" = Table.TransformColumns(#\"Changed Type\",{{\"species\", Text.Upper, type text}}),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Uppercased Text\",{{\"body_mass\", Int64.Type}})",
+                "in",
+                "    #\"Changed Type1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

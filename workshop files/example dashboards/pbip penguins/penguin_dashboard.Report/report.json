@@ -1,0 +1,60 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.64\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "7f53c77b12a9170728a2",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"6daffebcd426a808e2da\",\"layouts\":[{\"id\":0,\"position\":{\"x\":81.2604673694895,\"y\":43.46490115112229,\"z\":2000,\"width\":1046.9371842487717,\"height\":73.70135412581605,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Our Penguin Dashboard\",\"textStyle\":{\"fontSize\":\"36pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 73.70,
+          "width": 1046.94,
+          "x": 81.26,
+          "y": 43.46,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a6ca19dca1e46db57780\",\"layouts\":[{\"id\":0,\"position\":{\"x\":81.2604673694895,\"y\":221.10406237744817,\"z\":0,\"width\":614.1779510484671,\"height\":417.6410067129577,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"penguins.island\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(penguins.body_mass)\"}],\"Rows\":[{\"queryRef\":\"penguins.species\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"penguins\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"island\"},\"Name\":\"penguins.island\",\"NativeReferenceName\":\"island\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"body_mass\"}},\"Function\":1},\"Name\":\"CountNonNull(penguins.body_mass)\",\"NativeReferenceName\":\"Average of body_mass\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"species\"},\"Name\":\"penguins.species\",\"NativeReferenceName\":\"species\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"body_mass\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{}}}",
+          "filters": "[]",
+          "height": 417.64,
+          "width": 614.18,
+          "x": 81.26,
+          "y": 221.10,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ca8d43e94196109e60da\",\"layouts\":[{\"id\":0,\"position\":{\"x\":863.6286880896907,\"y\":221.10406237744817,\"z\":1000,\"width\":415.7512284020393,\"height\":171.9698262935708,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"penguins.sex\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"penguins\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"sex\"},\"Name\":\"penguins.sex\",\"NativeReferenceName\":\"sex\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"penguins\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"sex\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'female'\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 171.97,
+          "width": 415.75,
+          "x": 863.63,
+          "y": 221.10,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
