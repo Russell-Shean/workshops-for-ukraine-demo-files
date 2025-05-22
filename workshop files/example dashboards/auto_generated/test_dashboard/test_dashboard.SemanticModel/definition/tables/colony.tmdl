@@ -1,7 +1,7 @@
 table colony
 	lineageTag: c135e0be-bc71-413f-9847-2b92140b2dcf
 
-	column 'year'
+	column year
 		dataType: double
 		lineageTag: 8dbfefcf-e592-436e-9eec-0450eb2fcbc1
 		summarizeBy: sum
@@ -11,7 +11,7 @@ table colony
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'months'
+	column months
 		dataType: string
 		lineageTag: 741855f6-4055-424e-895f-e7d5120335bb
 		summarizeBy: none
@@ -19,7 +19,7 @@ table colony
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'state'
+	column state
 		dataType: string
 		lineageTag: 6add6265-68c7-4507-b22f-fdd0a57f3450
 		summarizeBy: none
@@ -27,7 +27,7 @@ table colony
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'colony_n'
+	column colony_n
 		dataType: double
 		lineageTag: 88da86c5-8c48-4c21-b9f1-e9cd7ecd6b19
 		summarizeBy: sum
@@ -37,7 +37,7 @@ table colony
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'colony_max'
+	column colony_max
 		dataType: double
 		lineageTag: eb468a08-7919-46b8-a055-66f2d4f63420
 		summarizeBy: sum
@@ -47,7 +47,7 @@ table colony
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'colony_lost'
+	column colony_lost
 		dataType: double
 		lineageTag: 5b3e042d-70a6-496b-9655-2d48b4e6913e
 		summarizeBy: sum
@@ -57,7 +57,7 @@ table colony
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'colony_lost_pct'
+	column colony_lost_pct
 		dataType: double
 		lineageTag: ef49da8a-7e24-4633-8dd3-5c08626b92b7
 		summarizeBy: sum
@@ -67,7 +67,7 @@ table colony
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'colony_added'
+	column colony_added
 		dataType: double
 		lineageTag: 306753de-73fa-460b-a0a9-169d6a7b84c7
 		summarizeBy: sum
@@ -77,7 +77,7 @@ table colony
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'colony_reno'
+	column colony_reno
 		dataType: double
 		lineageTag: 7add76c7-d266-4639-8080-d0760ce09414
 		summarizeBy: sum
@@ -87,7 +87,7 @@ table colony
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'colony_reno_pct'
+	column colony_reno_pct
 		dataType: double
 		lineageTag: aacb971c-bf1c-4419-af97-3deba9efd016
 		summarizeBy: sum
