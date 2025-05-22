@@ -1,0 +1,114 @@
+table colony
+	lineageTag: a18fbfad-5a3f-4510-aea3-0bfa2304ae42
+
+	column year
+		dataType: double
+		lineageTag: decba40f-f660-4efd-94b9-e8bd25c61bc2
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column months
+		dataType: string
+		lineageTag: c29d0f71-0c43-4b66-9dda-b37edaa51bf5
+		summarizeBy: none
+		sourceColumn: months
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 4299faa0-4b26-48b6-89ea-7ed1a7858fc4
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column colony_n
+		dataType: double
+		lineageTag: f0453579-4ab6-4a94-ba64-5eadf5415258
+		summarizeBy: sum
+		sourceColumn: colony_n
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column colony_max
+		dataType: double
+		lineageTag: aae6f990-f697-47ac-aedc-5fce54a9f4d3
+		summarizeBy: sum
+		sourceColumn: colony_max
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column colony_lost
+		dataType: double
+		lineageTag: 2a5ea35b-cc05-4107-83d2-a2d89cde6b86
+		summarizeBy: sum
+		sourceColumn: colony_lost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column colony_lost_pct
+		dataType: double
+		lineageTag: 6ef9a766-c040-45b4-a376-185810098c7c
+		summarizeBy: sum
+		sourceColumn: colony_lost_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column colony_added
+		dataType: double
+		lineageTag: c572f349-7c6d-4290-8745-c32120064f4a
+		summarizeBy: sum
+		sourceColumn: colony_added
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column colony_reno
+		dataType: double
+		lineageTag: e9f688b5-9e20-4aa1-af38-0fd480e8a4fc
+		summarizeBy: sum
+		sourceColumn: colony_reno
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column colony_reno_pct
+		dataType: double
+		lineageTag: 81d7cb54-0d6a-4aa8-a637-840eca547d98
+		summarizeBy: sum
+		sourceColumn: colony_reno_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition colony = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents("C:\Users\rshea\Downloads\colony.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+					#"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					#"Replaced Value" = Table.ReplaceValue(#"Promoted Headers","NA",null,Replacer.ReplaceValue,{"year", "months", "state", "colony_n", "colony_max", "colony_lost", "colony_lost_pct", "colony_added", "colony_reno", "colony_reno_pct"}),
+					#"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{  {"year", type number}, {"months", type text}, {"state", type text}, {"colony_n", type number}, {"colony_max", type number}, {"colony_lost", type number}, {"colony_lost_pct", type number}, {"colony_added", type number}, {"colony_reno", type number}, {"colony_reno_pct", type number}   })
+				in
+					#"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
