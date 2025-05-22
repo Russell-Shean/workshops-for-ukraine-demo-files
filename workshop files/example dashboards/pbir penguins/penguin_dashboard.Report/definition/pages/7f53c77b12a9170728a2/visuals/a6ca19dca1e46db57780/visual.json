@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "a6ca19dca1e46db57780",
+  "position": {
+    "x": 81.2604673694895,
+    "y": 221.10406237744817,
+    "z": 0,
+    "height": 417.64100671295768,
+    "width": 614.17795104846709,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "penguins"
+                    }
+                  },
+                  "Property": "island"
+                }
+              },
+              "queryRef": "penguins.island",
+              "nativeQueryRef": "island",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "penguins"
+                    }
+                  },
+                  "Property": "species"
+                }
+              },
+              "queryRef": "penguins.species",
+              "nativeQueryRef": "species"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "penguins"
+                        }
+                      },
+                      "Property": "body_mass"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "CountNonNull(penguins.body_mass)",
+              "nativeQueryRef": "Average of body_mass"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "penguins"
+                      }
+                    },
+                    "Property": "body_mass"
+                  }
+                },
+                "Function": 1
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

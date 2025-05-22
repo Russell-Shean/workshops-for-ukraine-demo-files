@@ -1,0 +1,85 @@
+table penguins
+	lineageTag: 8bc1cb48-c4a7-4fc2-97d3-abaacaa57967
+
+	column species
+		dataType: string
+		lineageTag: fc87d866-b9ab-4d8c-a49c-cab24fc9561d
+		summarizeBy: none
+		sourceColumn: species
+
+		annotation SummarizationSetBy = Automatic
+
+	column island
+		dataType: string
+		lineageTag: 7077cf71-61e7-4e30-ba88-961b906031b8
+		summarizeBy: none
+		sourceColumn: island
+
+		annotation SummarizationSetBy = Automatic
+
+	column bill_len
+		dataType: string
+		lineageTag: 370dfdfb-4f22-4e3c-8249-437d7b38916c
+		summarizeBy: none
+		sourceColumn: bill_len
+
+		annotation SummarizationSetBy = Automatic
+
+	column bill_dep
+		dataType: string
+		lineageTag: 4a2b6950-51cd-4ca6-9e82-13dbb4f27d08
+		summarizeBy: none
+		sourceColumn: bill_dep
+
+		annotation SummarizationSetBy = Automatic
+
+	column flipper_len
+		dataType: string
+		lineageTag: b9647af7-5fc3-4820-b9cc-dbe2acc13127
+		summarizeBy: none
+		sourceColumn: flipper_len
+
+		annotation SummarizationSetBy = Automatic
+
+	column body_mass
+		dataType: int64
+		formatString: 0
+		lineageTag: 096c486b-6073-44a8-a779-2602e3819953
+		summarizeBy: sum
+		sourceColumn: body_mass
+
+		annotation SummarizationSetBy = Automatic
+
+	column sex
+		dataType: string
+		lineageTag: 617fd211-662d-4b0b-8a54-8d8a28f60429
+		summarizeBy: none
+		sourceColumn: sex
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 381f391b-f97b-41bb-bfb3-b8ed977128de
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition penguins = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\rshea\coding_projects\dashboard_tests\workshop files\data\penguins.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"species", type text}, {"island", type text}, {"bill_len", type text}, {"bill_dep", type text}, {"flipper_len", type text}, {"body_mass", type text}, {"sex", type text}, {"year", Int64.Type}}),
+				    #"Uppercased Text" = Table.TransformColumns(#"Changed Type",{{"species", Text.Upper, type text}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Uppercased Text",{{"body_mass", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

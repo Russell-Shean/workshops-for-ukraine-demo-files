@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "6daffebcd426a808e2da",
+  "position": {
+    "x": 81.2604673694895,
+    "y": 43.464901151122291,
+    "z": 2000,
+    "height": 73.701354125816053,
+    "width": 1046.9371842487717,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Our Penguin Dashboard",
+                    "textStyle": {
+                      "fontSize": "36pt"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
