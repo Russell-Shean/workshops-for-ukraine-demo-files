@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "b6cd7facd60de099c052",
   "position": {
     "x": 75,
@@ -88,7 +88,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Click on any other button to get rid of this extra button'"
+                                "Value": "'Winter'"
                               }
                             }
                           ]
@@ -124,5 +124,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d0ee20028ac05591114",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "wa_bigfoot_by_county"
+              }
+            },
+            "Property": "season"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
