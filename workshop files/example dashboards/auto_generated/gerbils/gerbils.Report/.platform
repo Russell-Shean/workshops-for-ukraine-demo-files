@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "gerbils"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dff6b20b-c523-449f-85ac-78969be17d25"
+  }
+}
