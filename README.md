@@ -1,5 +1,5 @@
 # workshops-for-ukraine-demo-files
-Demonstration files for the workshops for Ukraine demonstration of Power Bpy
+Demonstration files for the Workshops for Ukraine demonstration of Power Bpy
 
 This repository contains several files that I used or referenced a talk I gave on May 22, 2025 for the Workshops for Ukriane series. The talk was about Power Bpy, a python package I'm developing to create and modify Power BI dashboards using python.        
 
